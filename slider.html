@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .slider-container {
+            width: 300px;
+            text-align: center;
+        }
+        .slider {
+            width: 100%;
+        }
+        .value {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <input type="range" min="0" max="100" value="0" class="slider" id="progressSlider">
+        <div class="value">Value: <span id="sliderValue">0</span></div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('progressSlider');
+        const sliderValue = document.getElementById('sliderValue');
+
+        slider.oninput = function() {
+            sliderValue.textContent = this.value;
+        };
+    </script>
+</body>
+</html>
